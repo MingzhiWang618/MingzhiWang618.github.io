@@ -307,9 +307,10 @@
 
 
 <!-- First research result -->
-<section class="hero is-small">
+<section class="hero is-small" style="margin-bottom: 4rem;">
   <div class="hero-body">
     <div class="container has-text-centered">
+      <h1 class="title" style="margin-bottom: 1.5rem;">Dataset</h1>
       <img src="static/images/NucFix_dataset.jpg" alt="First research result visualization" loading="lazy"/>
       <h2 class="subtitle">
         Distribution of error case sizes in the proposed NucEMFix dataset, showing a long-tail distribution. Error cases are distributed throughout the whole brain and vary widely in shape and size, categorized into three types: false merge, false split, and false merge & split.
@@ -319,13 +320,14 @@
 </section>
 
 <!-- Second research result -->
-<section class="hero is-small">
+<section class="hero is-small" style="margin-bottom: 4rem;">
   <div class="hero-body">
     <div class="container has-text-centered">
+      <h1 class="title" style="margin-bottom: 1.5rem;">TANGO Framework</h1>
       <img src="static/images/Tango_overview.jpg" alt="Second research result visualization" loading="lazy"/>
       <h2 class="subtitle">
         TANGO pipeline.<br>
-        (a) Tokenization: realign slices and apply a DT–watershed to split the erroneous seed M<sup>0</sup> into sub-nucleus tokens.<br>
+        (a) <b>Tokenization</b>: realign slices and apply a DT–watershed to split the erroneous seed M<sup>0</sup> into sub-nucleus tokens.<br>
         (b) <b>Token completion:</b> a 3D U-Net takes each token with its local crop and proposes mask hypotheses with quality scores.<br>
         (c) <b>Ordinal selection & decoding:</b> rank hypotheses with an Ordinal Quality Estimator and keep a reliable set via NMS.
       </h2>
