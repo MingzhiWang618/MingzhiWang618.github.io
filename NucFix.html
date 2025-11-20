@@ -319,23 +319,33 @@
           Distribution of error case sizes in the proposed NucEMFix dataset, showing a long-tail distribution. Error cases are distributed throughout the whole brain and vary widely in shape and size, categorized into three types: false merge, false split, and false merge&split..
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/Tango_overview.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          <p>
-            TANGO pipeline.
-            (a) Tokenization: realign slices and apply a DT–watershed to split the erroneous seed M<sup>0</sup> into sub-nucleus tokens.
-            (b) <b>Token completion:</b> a 3D U-Net takes each token with its local crop and proposes mask hypotheses with quality scores.
-            (c) <b>Ordinal selection & decoding:</b> rank hypotheses with an Ordinal Quality Estimator and keep a reliable set via NMS.
-            </p>
-        </h2>
-      </div>
+      
   </div>
 </div>
 </div>
 </section>
 <!-- End image carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/Tango_overview.jpg" alt="Second research result visualization" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            <p>
+              TANGO pipeline.
+              (a) Tokenization: realign slices and apply a DT–watershed to split the erroneous seed M<sup>0</sup> into sub-nucleus tokens.
+              (b) <b>Token completion:</b> a 3D U-Net takes each token with its local crop and proposes mask hypotheses with quality scores.
+              (c) <b>Ordinal selection & decoding:</b> rank hypotheses with an Ordinal Quality Estimator and keep a reliable set via NMS.
+              </p>
+          </h2>
+        </div>
+  </div>
+</div>
+</div>
+</section>
 
 
 
