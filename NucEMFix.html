@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="SAIR: A Unified Framework for 3D nuclei segmentation error correction via Structured Aggregation and Implicit Restoration">
+  <meta name="title" content="NuGraph: Graph-Based Reasoning over 3D Primitives for Nucleus Segmentation Correction">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
@@ -74,7 +74,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>TANGO: Tokenized Analysis-by-synthesis for 3D Nuclei Segmentation Correction</title>
+  <title>NuGraph: Graph-Based Reasoning over 3D Primitives for Nucleus Segmentation Correction</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -241,7 +241,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">TANGO:Tokenized Analysis-by-synthesis for 3D Nuclei Segmentation Correction</h1>
+            <h1 class="title is-1 publication-title">NuGraph: Graph-Based Reasoning over 3D Primitives for Nucleus Segmentation Correction</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -295,6 +295,16 @@
                   </a>
                 </span>
 
+                <span class="link-block">
+                  <a href="https://github.com/YOUR_REPO_HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>  <!-- 数据库图标 -->
+                    </span>
+                    <span>Data</span>  <!-- 文字也可以改成 Data -->
+                  </a>
+                </span>
+
                 </a>
               </span>
             </div>
@@ -304,6 +314,26 @@
     </div>
   </div>
 </section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Correcting segmentation errors in large-scale 3D nuclei reconstructions requires reasoning about which fragments belong to the same nucleus across densely packed regions. Existing correction methods rely on local pairwise fragment matching, which cannot resolve the global topology of nuclear clusters and fails to recover missing morphology. We propose NUGRAPH, a graph-based reasoning framework that operates over atomic 3D primitives obtained by decomposing erroneous masks. NUGRAPH encodes primitive geometry via a 3D point-cloud backbone and performs global relational reasoning through graph attention, capturing inter-primitive dependencies across entire clusters rather than isolated pairs. A primitive–proposal contrastive loss aligns local fragment features with nucleus-level semantics, improving grouping accuracy in dense regions. The resulting proposals are then refined by a shape-refinement network that predicts signed distance fields to restore smooth, biologically plausible morphology. To train without manual error annotations, we develop a self-supervised data engine that synthesizes realistic segmentation errors from clean nuclei labels. To benchmark correction at brain scale, we curate NucEMFix, the first brain-wide EM benchmark of nuclei error cases across FAFB and MICrONS (8,000+ annotated error nuclei). Experiments on NucEMFix and public C. elegans confocal volumes show that NUGRAPH consistently outperforms both re-segmentation baselines and pairwise correction methods, achieving state-of-the-art F1 scores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
 
 
 <section class="hero is-small" style="margin-bottom: 4rem;">
@@ -375,13 +405,13 @@
 <section class="hero is-small" style="margin-bottom: 4rem;">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title" style="margin-bottom: 1.5rem;">TANGO Framework</h1>
-      <img src="static/images/Tango_overview.jpg" alt="Second research result visualization" loading="lazy"/>
+      <h1 class="title" style="margin-bottom: 1.5rem;">NuGraph Framework</h1>
+      <img src="static/images/NucEMFix/NuGraph_overview.jpg" alt="Second research result visualization" loading="lazy"/>
       <h2 class="subtitle">
-        TANGO pipeline.<br>
-        (a) <b>Tokenization</b>: realign slices and apply a DT–watershed to split the erroneous seed M<sup>0</sup> into sub-nucleus tokens.<br>
-        (b) <b>Token completion:</b> a 3D U-Net takes each token with its local crop and proposes mask hypotheses with quality scores.<br>
-        (c) <b>Ordinal selection & decoding:</b> rank hypotheses with an Ordinal Quality Estimator and keep a reliable set via NMS.
+        NuGraph pipeline.<br>
+        (a) <b>Shape decomposition:</b>: erroneous masks are decomposed into atomic 3D primitives via EDT-based watershed.<br>
+        (b) <b>Graph-based relational reasoning:</b> 3D point-cloud features of primitives are encoded and reasoned over via graph attention netowrk to group primitives into nucleus proposals.<br>
+        (c) <b>Shape refinement:</b> a 3D U-Net predicts signed distance fields to restore complete nucleus morphology.
       </h2>
     </div>
   </div>
